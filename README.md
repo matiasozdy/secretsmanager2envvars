@@ -1,9 +1,9 @@
 ## SecretsManager to env vars
 
 ### Requirements
-docker (https://get.docker.com/)
-python3.7 (https://www.python.org/downloads/)
-define AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY and AWS_REGION environment variables (and also in the Dockerfile if using it)
+- docker (https://get.docker.com/)
+- python3.7 (https://www.python.org/downloads/)
+- define AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY and AWS_REGION environment variables (and also in the Dockerfile if using it)
 
 ### Implementation
 A simple app.py has been created to read any environment variable that has the "replaceme" value and actually replace it by the real value from AWS Secrets Manager using boto3. For this approach, i've also added a simple tweak, print the export of the actual variables and then run an eval, to actually export the variables to the container/host.
